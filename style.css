@@ -19,56 +19,59 @@ body {
 }
 
 .home-content {
-    max-width: 600px;
+max-width: 600px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 }
 
 .home-content h1 {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 16px;
+font-size: 3rem;
+color: white;
+margin-bottom: 16px;
 }
 
 .home-content h3 {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.756);
-    margin-bottom: 20px;
+font-size: 1.5rem;
+color: rgba(255, 255, 255, 0.756);
+margin-bottom: 20px;
 }
 
 .home-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
+font-size: 1rem;
+line-height: 1.6;
+margin-bottom: 30px;
 }
 
 .social-media {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
+display: flex;
+gap: 15px;
+margin-bottom: 30px;
 }
 
 .social-media a {
-    font-size: 2rem;
-    color: white;
-    transition: color 0.3s ease;
+font-size: 2rem;
+color: white;
+transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-    color: rgba(18, 115, 241, 0.852);
+color: rgba(18, 115, 241, 0.852);
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: rgba(18, 115, 241, 0.852);
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+display: inline-block;
+padding: 12px 25px;
+background-color: rgba(18, 115, 241, 0.852);
+color: white;
+text-decoration: none;
+border-radius: 20px;
+font-weight: bold;
+transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: rgba(5, 43, 93, 0.852);
+background-color: rgba(5, 43, 93, 0.852);
 }
 
 .home-img {
@@ -109,18 +112,18 @@ body {
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px; 
-    grid-template-rows: auto 300px; 
+    grid-template-rows: auto; 
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .card {
-    order: 0; 
     padding: 20px;
     background-color: #ffffff; 
     color: #333; 
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    min-height: 250px; 
 }
 
 .card h3 {
@@ -131,11 +134,12 @@ body {
 .card ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 15px;
 }
 
 .card ul li {
     background-color: #e6f3ff;
-    padding: 5px 10px;
+    padding: 4px 8px;
     margin-bottom: 5px;
     border-radius: 5px;
     font-size: 0.9em;
@@ -143,14 +147,13 @@ body {
 
 
 .flex-item-demo {
-    order: 1; 
     grid-column: span 2; 
     background-color: #e6f3ff;
     border: 2px solid #4a90e2;
 }
 
 .grid-item-demo {
-    align-self: end;
+    align-self: start;
     background-color: #ffe6e6;
     border: 2px solid #e24a4a;
 }
@@ -160,58 +163,68 @@ body {
     border: 2px solid #6cbe45;
 }
 
-@media (max-width: 900px) {
-    .home {
-        flex-direction: column-reverse;
-        padding: 50px 5%;
-        text-align: center;
-    }
-
-    .home-content {
-        max-width: 100%;
-    }
-
-    .social-media {
-        justify-content: center;
-    }
-
-    .home-img {
-        margin-bottom: 30px;
-    }
+.certificacoes-section {
+    padding: 80px 10%;
+    background-color: rgba(18, 115, 241, 0.1); 
 }
 
+.certificacoes-carousel {
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+.certificacao-img {
+    max-height: 450px;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+.home {
+    flex-direction: column-reverse;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.home-content {
+    max-width: 100%;
+    align-items: center; 
+}
+
+.social-media {
+    justify-content: center;
+}
+
+.home-img {
+    margin-bottom: 30px;
+}
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    
-    .habilidades-container {
-        grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: auto; 
-    }
-
-    .flex-item-demo {
-        grid-column: span 1; 
-        order: 0;
-    }
-
-    .grid-item-demo {
-        align-self: auto; 
-    }
+.habilidades-container {
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto; 
 }
 
+.flex-item-demo {
+    grid-column: span 1; 
+}
+
+.grid-item-demo {
+    align-self: auto;
+}
+}
 
 @media (max-width: 768px) {
-    
-    .habilidades-container {
-        grid-template-columns: 1fr; 
-        grid-template-rows: auto; 
-    }
+.habilidades-container {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto; 
+}
 
-    .flex-item-demo {
-        grid-column: span 1; 
-        order: 0;
-    }
+.flex-item-demo {
+    grid-column: span 1; 
+}
 
-    .grid-item-demo {
-        align-self: auto; 
-    }
+.grid-item-demo {
+    align-self: auto; 
+}
 }
